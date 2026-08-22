@@ -13,6 +13,22 @@ public abstract class Pedido {
         this.distanciaKm = distanciaKm;
     }
 
+    // Template method
+    public final void ejecutarProceso() {
+        mostrarResumen();
+        if (!validarPedido()) {
+            System.out.println("→ No es posible realizar el envío.\n\n");
+            return;
+        }
+        realizarEntrega();
+    }
+
+    protected abstract boolean validarPedido();
+
+    private void realizarEntrega() {
+        System.out.println("✔ El pedido se encuentra en reparto.\n\n");
+    }
+
     protected abstract int calcularTiempoEntrega();
 
     private void mostrarResumen() {

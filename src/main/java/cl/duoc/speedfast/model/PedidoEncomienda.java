@@ -14,6 +14,19 @@ public class PedidoEncomienda extends Pedido {
     }
 
     @Override
+    protected boolean validarPedido() {
+        System.out.println("Verificando que el peso de la encomienda no exceda el límite...");
+
+        if (pesoEncomienda > CAPACIDAD_MAXIMA_KG) {
+            System.out.println("[ERROR] El peso de la encomienda supera el límite permitido.\n");
+            return false;
+        }
+
+        System.out.println("[OK] Peso de la encomienda permitido.\n");
+        return true;
+    }
+
+    @Override
     protected int calcularTiempoEntrega() {
         // 20m + 1.5m * ditanciaKm
         return (int) (20 + 1.5 * getDistanciaKm());
