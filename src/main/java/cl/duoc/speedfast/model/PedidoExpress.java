@@ -6,4 +6,10 @@ public class PedidoExpress extends Pedido {
     public PedidoExpress(String idPedido, String direccionEntrega, double distanciaKm) {
         super("PEDIDO EXPRESS", idPedido, direccionEntrega, distanciaKm);
     }
+
+    @Override
+    protected int calcularTiempoEntrega() {
+        // 10m tiempo base, pero si > 5km, se agregan 5m extra
+        return (getDistanciaKm() > 5) ? 15 : 10;
+    }
 }

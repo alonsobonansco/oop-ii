@@ -13,6 +13,27 @@ public abstract class Pedido {
         this.distanciaKm = distanciaKm;
     }
 
+    protected abstract int calcularTiempoEntrega();
+
+    private void mostrarResumen() {
+        String textoResumen = """
+                ===================
+                %s #%s
+                ===================
+                
+                Dirección: %s
+                Distancia: %.1f km
+                Tiempo estimado de entrega: %d minutos
+                """.formatted(
+                getTipoPedido(), getIdPedido(),
+                getDireccionEntrega(),
+                getDistanciaKm(),
+                calcularTiempoEntrega()
+        );
+
+        System.out.println(textoResumen);
+    }
+
     public String getTipoPedido() {
         return tipoPedido;
     }

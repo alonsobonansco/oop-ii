@@ -12,4 +12,10 @@ public class PedidoEncomienda extends Pedido {
         }
         this.pesoEncomienda = pesoEncomienda;
     }
+
+    @Override
+    protected int calcularTiempoEntrega() {
+        // 20m + 1.5m * ditanciaKm
+        return (int) (20 + 1.5 * getDistanciaKm());
+    }
 }
