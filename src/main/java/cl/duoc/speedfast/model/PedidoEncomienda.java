@@ -1,7 +1,7 @@
 package cl.duoc.speedfast.model;
 
 /**
- * Subclase de Pedido. Su atributos son CAPACIDAD_MAXIMA y pesoEncomienda. El primero es
+ * Subclase de Pedido. Sus atributos son CAPACIDAD_MAXIMA y pesoEncomienda. El primero es
  * el valor máximo permitido para el transporte y el personal, el segundo es el peso real
  * de la encomienda a enviar.
  */
@@ -42,7 +42,7 @@ public class PedidoEncomienda extends Pedido {
 
     @Override
     protected int calcularTiempoEntrega() {
-        // 20m + 1.5m * ditanciaKm
+        // 20m + 1.5m * distanciaKm
         return (int) (20 + 1.5 * getDistanciaKm());
     }
 }

@@ -12,19 +12,31 @@ Analista Programador Computacional
 
 ### 📖 Descripción:
 
-Este proyecto es una aplicación desarrollada en **Java** y **Maven** que simula el flujo logístico de una empresa de reparto a
-domicilio. La columna vertebral de la aplicación implementa el Patrón de Diseño Conductual Template Method para orquestar de manera centralizada el ciclo de vida secuencial e inmutable de cada despacho.
+Este proyecto es una aplicación desarrollada en **Java** y **Maven** que simula el flujo logístico de una empresa de
+reparto a
+domicilio. La columna vertebral de la aplicación implementa el Patrón de Diseño Conductual Template Method para
+orquestar de manera centralizada el ciclo de vida secuencial e inmutable de cada despacho.
 
 ### 🚀 Explicación del Patrón de Diseño Template Method
-Se implementa este patrón conductual para definir el esqueleto inmutable de un algoritmo en la superclase (`public final void ejecutarProceso()`), encapsulando el orden secuencial del negocio y protegiendo el flujo mediante el uso estricto de modificadores de acceso para evitar fugas de arquitectura. La jerarquía de control se distribuye estratégicamente según su nivel de visibilidad:
-* **`public`:** Expone únicamente el método plantilla (`ejecutarProceso()`) como el botón de encendido oficial hacia el entorno de ejecución (`Main.java`).
-* **`protected`:** Oculta los pasos abstractos variables (`validarPedido()` y `calcularTiempoEntrega()`) del mundo exterior, pero los desbloquea exclusivamente para que las subclases personalicen su comportamiento interno mediante `@Override`.
-* **`private`:** Sella por completo las rutinas fijas y procedimentales (`mostrarResumen()` y `realizarEntrega()`) dentro del contexto estricto de la superclase, garantizando que ningún componente externo altere el comportamiento base del sistema.
 
+Se implementa este patrón conductual para definir el esqueleto inmutable de un algoritmo en la superclase (
+`public final void ejecutarProceso()`), encapsulando el orden secuencial del negocio y protegiendo el flujo mediante el
+uso estricto de modificadores de acceso para evitar fugas de arquitectura. La jerarquía de control se distribuye
+estratégicamente según su nivel de visibilidad:
+
+* **`public`:** Expone únicamente el método plantilla (`ejecutarProceso()`) como el botón de encendido oficial hacia el
+  entorno de ejecución (`Main.java`).
+* **`protected`:** Oculta los pasos abstractos variables (`validarPedido()` y `calcularTiempoEntrega()`) del mundo
+  exterior, pero los desbloquea exclusivamente para que las subclases personalicen su comportamiento interno mediante
+  `@Override`.
+* **`private`:** Sella por completo las rutinas fijas y procedimentales (`mostrarResumen()` y `realizarEntrega()`)
+  dentro del contexto estricto de la superclase, garantizando que ningún componente externo altere el comportamiento
+  base del sistema.
 
 ---
 
 ### 📂 Estructura:
+
 #### *Nota: El Main queda intencionalmente en la raíz del paquete principal.
 
 ```text

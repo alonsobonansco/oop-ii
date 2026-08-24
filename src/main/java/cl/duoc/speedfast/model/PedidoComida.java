@@ -1,7 +1,7 @@
 package cl.duoc.speedfast.model;
 
 /**
- * Subclase de Pedido. Su atributo propio es mochilaEnbuenEstado para verificar que
+ * Subclase de Pedido. Su atributo propio es mochilaEnBuenEstado para verificar que
  * la comida llegue en óptimas condiciones.
  */
 public class PedidoComida extends Pedido {

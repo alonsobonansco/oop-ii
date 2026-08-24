@@ -4,7 +4,7 @@ import cl.duoc.speedfast.model.*;
 
 /**
  * Punto de entrada de la aplicación. Asigna objetos de las subclases a variables de
- * la superclase Pedido y llama a sus métodos para demostrar sobrescritura y sobrecarga.
+ * la superclase Pedido y llama al método ejecutarProceso().
  */
 public class Main {
     public static void main(String[] args) {
